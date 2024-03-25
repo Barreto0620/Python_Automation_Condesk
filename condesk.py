@@ -3,7 +3,6 @@
 import pyautogui
 import time
 import pandas as pd
-import openpyxl
 
 # Pause Global
 
@@ -33,7 +32,7 @@ pyautogui.click(x=311, y=237)
 time.sleep(1.5)
 
 # Passo 3: Importando a base de dados para cadastro
-tabela = pd.read_excel("condesk_user.xlsx")
+tabela = pd.read_excel("condesk_register.xlsx")
 print(tabela)
 
 # Passo 4: Cadastrando Usuário
@@ -72,10 +71,37 @@ for linha in tabela.index:
     pyautogui.write(str(tabela.loc[linha, "senha"]))
     pyautogui.press("tab", presses=2)
     pyautogui.press("enter")
+    time.sleep(1.5)
     pyautogui.click(x=1131, y=598)
     time.sleep(2)
     pyautogui.click(x=327, y=234)
     time.sleep(2)
     #Usuário Criado
-    
-pyautogui.alert('Finalizado Fila de Cadastro !!')
+
+pyautogui.alert('Cadastro Finalizado !!') 
+
+#Abrindo planilha
+pyautogui.press("win")
+pyautogui.write("Documentos: condesk_register.xlsx")
+time.sleep(1)
+pyautogui.press("enter")
+time.sleep(4)
+
+#Atualizando informações
+pyautogui.hotkey('ctrl', 'pageup')
+pyautogui.click(x=17, y=256)
+pyautogui.dragTo(x=16, y=598, duration=1)
+pyautogui.hotkey("ctrl","x")
+pyautogui.hotkey('ctrl', 'pagedown')
+pyautogui.hotkey("ctrl","home")
+pyautogui.hotkey("ctrl","down")
+pyautogui.press("down")
+pyautogui.hotkey("ctrl","v")
+pyautogui.hotkey('ctrl', 'pageup')
+pyautogui.hotkey("ctrl","home")
+pyautogui.hotkey("ctrl","b")
+pyautogui.hotkey("alt","f4")
+
+pyautogui.alert('Atualização Finalizada !!')
+
+#FIM
