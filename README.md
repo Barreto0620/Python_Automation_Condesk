@@ -39,4 +39,7 @@ Este projeto é licenciado sob a [MIT License](https://github.com/Barreto0620/Py
 
 - LinkedIn: www.linkedin.com/in/gabriel-barreto-oliveira
 - Email: gabrielprozds@email.com
+  
+## Obrigado por visitar meu repositório e por seu interesse em meus projetos!
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
